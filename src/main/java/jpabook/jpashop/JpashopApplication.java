@@ -15,6 +15,11 @@ public class JpashopApplication {
         * cd D:\Workspace\jpashop\build\libs : 여기에 jpashop-0.0.1-SNAPSHOT.jar 파일이 있다.
         * java -jar jpashop-0.0.1-SNAPSHOT.jar : jar 파일로 spring 을 실행할 수 있다.
         * */
+
+        /* UTF-8 로 인코딩 되어있는지 확인해봐야 함
+        * default encoding: UTF-8
+        * file encoding : with NO BOM
+        * */
     }
 
 }
