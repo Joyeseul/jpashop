@@ -15,6 +15,11 @@ import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.fail;
 import static org.junit.Assert.*;
 
+/* @ExtendWith,
+* @DataJpaTest
+* @AutoConfigureTestDatabase(replace = AutoConfigureTestDatabase.Replace.NONE)
+* 등에 대해서도 알아보기
+* */
 @RunWith(SpringRunner.class)
 @SpringBootTest
 @Transactional
@@ -23,11 +28,13 @@ public class MemberServiceTest {
     @Autowired MemberService memberService;
     @Autowired MemberRepository memberRepository;
     @Autowired EntityManager em;
+    /* 대신에 @MockBean 으로 주입받을 수도 있다. */
 
     @Test
     //@Rollback(value = false)    //롤백 안 하고 commit 실행
     public void 회원가입() throws Exception {
         //Given
+        /* 만약 setter 가 protected로 막혀있을 경우, 생성하는 방법을 따로 찾아야 한다. */
         Member member = new Member();
         member.setName("kim");
         
